@@ -1,0 +1,34 @@
+{
+  "name": "touch-trigger",
+  "version": "1.0.0",
+  "description": "触摸滑动方向触发事件",
+  "source": "src/touch-trigger.js",
+  "main": "dist/touch-trigger.js",
+  "module": "dist/touch-trigger.mjs",
+  "unpkg": "dist/touch-trigger.umd.js",
+  "amdName": "TouchTrigger",
+  "sideEffects": false,
+  "scripts": {
+    "format": "prettier --write '**'",
+    "build": "rm -rf dist && microbundle --strict --no-compress"
+  },
+  "author": "WhiteFon",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^2.1.0",
+		"lint-staged": "^8.1.5",
+    "microbundle": "^0.11.0",
+    "prettier": "^1.19.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
